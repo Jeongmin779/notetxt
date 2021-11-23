@@ -37,4 +37,7 @@
     </c:if>
 </div>
 </body>
+<script>
+    console.log('${msg}');
+</script>
 </html>

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!doctype html>
 <html lang="en">
 <head>
@@ -20,7 +21,7 @@
     <div class="mb-3 row">
       <h1 class="col-sm-12">로그인</h1>
     </div>
-    <form method="get" action="loginpage">
+    <form method="POST" action="loginpage">
       <div class="mb-3 row">
         <label for="id" class="col-sm-2 col-form-label">ID</label>
         <div class="col-sm-9">
@@ -30,7 +31,7 @@
       <div class="mb-3 row">
         <label for="password" class="col-sm-2 col-form-label">비밀번호</label>
         <div class="col-sm-9">
-          <input type="password" class="form-control" id="password" placeholder="이메일 입력" required="required" name="pwd">
+          <input type="password" class="form-control" id="password" placeholder="비밀번호 입력" required="required" name="pwd">
         </div>
       </div>
       <button type="submit" class="btn btn-outline-primary mb-0">계정 로그인</button>
