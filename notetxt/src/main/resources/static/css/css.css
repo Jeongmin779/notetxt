@@ -1,0 +1,134 @@
+@charset "UTF-8";
+.container-fluid{
+    width:70%;
+}
+.show{
+    margin-top: 1px;
+}
+.bi-person-circle{
+    font-size: 1.2rem;
+}
+.swiper-container {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.swiper-container {
+    width: 100%;
+    height: 300px;
+    margin: 20px auto;
+}
+
+.myVoka {
+    padding-left: 100px;
+    padding-top: 30px;
+}
+
+.wh{
+    width: 100%;
+    height: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+.form_action_button{
+    text-align: right;
+}
+
+.center{
+    margin:0 auto;
+}
+
+.m-top{
+    margin-top: 40px;
+}
+
+.bor{
+    border: 1px solid black;
+}
+
+.p-10{
+    padding:10px;
+}
+
+.answer-padding{
+    padding:10px;
+    padding-bottom: 50px;
+}
+.swiper-container {overflow: visible;}
+.swiper-slide {opacity:1; transition:opacity 0.3s;}
+.swiper-slide-active,
+.swiper-slide-active + .swiper-slide,
+.swiper-slide-active + .swiper-slide + .swiper-slide,
+.swiper-slide-active + .swiper-slide + .swiper-slide + .swiper-slide {opacity:1}
+
+.plus_icon {
+    height: 50px;
+    width: 50px;
+}
+
+.popular_Voka {
+    padding-left: 100px;
+    padding-top: 30px;
+}
+
+.vokaWord_vokaName {
+    padding-top: 50px;
+}
+
+.vokaWord_vokanickName {
+    color: #949494;
+}
+
+.voka_no {
+    display: none;
+    visibility: hidden;
+}
+
+.myVoka_search_box {
+    display: flex;
+    margin-top: 90px;
+}
+
+.myVoka_form {
+    display: flex;
+}
+
+.select_category {
+    width: 150px;
+}
+
+.myVoka_search {
+    width: 400px;
+}
+.myVoka_search_box2{
+    margin: 0 auto;
+    display: flex;
+}

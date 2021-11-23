@@ -1,0 +1,31 @@
+@charset "UTF-8";
+thead > tr > th:nth-child(1) {
+    width:20%;
+}
+thead > tr > th:nth-child(2) {
+    width:40%;
+}
+thead > tr > th:nth-child(3) {
+    width:30%;
+}
+thead > tr > th:nth-child(4) {
+    width:10%;
+}
+.form-control1{
+    height: 86px;
+    resize: none;
+}
+.df{
+    width:100%;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    height: 58px;
+    resize: vertical;
+    padding:3px 10px 0;
+}
+.df:focus{
+    background: #fff;
+    box-shadow: 10px;
+    border-color: #3498db;
+    outline: none;
+}

@@ -1,0 +1,21 @@
+spring:
+  mvc:
+    view:
+      suffix: .jsp
+      prefix: /WEB-INF/views/
+    static-path-pattern: classpath:/resources/**
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  datasource:
+    driverClassName: org.h2.Driver
+    username: sa
+    password:
+    hikari:
+      jdbc-url: jdbc:h2:tcp://localhost/~/test
+  web:
+    resources:
+      static-locations: /
+mybatis:
+  type-aliases-package: com.exmaple.notetxt.dto
