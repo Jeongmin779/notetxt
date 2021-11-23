@@ -19,3 +19,7 @@ spring:
       static-locations: /
 mybatis:
   type-aliases-package: com.exmaple.notetxt.dto
+logging:
+  level:
+    mapper:
+      DEBUG

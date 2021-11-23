@@ -20,17 +20,17 @@
     <div class="mb-3 row">
       <h1 class="col-sm-12">로그인</h1>
     </div>
-    <form method="get" action="../action/login.jsp">
+    <form method="get" action="loginpage">
       <div class="mb-3 row">
         <label for="id" class="col-sm-2 col-form-label">ID</label>
         <div class="col-sm-9">
-          <input type="text" class="form-control" id="id" autofocus="" required="" minlength="4" placeholder="아이디 입력" name="id">
+          <input type="text" class="form-control" id="id" autofocus="" required="required" minlength="4" placeholder="아이디 입력" name="id">
         </div>
       </div>
       <div class="mb-3 row">
         <label for="password" class="col-sm-2 col-form-label">비밀번호</label>
         <div class="col-sm-9">
-          <input type="password" class="form-control" id="password" placeholder="이메일 입력" minlength="8" maxlength="20" required/ name="pwd">
+          <input type="password" class="form-control" id="password" placeholder="이메일 입력" required="required" name="pwd">
         </div>
       </div>
       <button type="submit" class="btn btn-outline-primary mb-0">계정 로그인</button>

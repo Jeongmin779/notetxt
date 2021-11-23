@@ -20,7 +20,7 @@
         <div class="mb-3 row">
             <h1 class="col-sm-12">회원가입</h1>
         </div>
-        <form action="../action/signup.jsp" onsubmit="return jbSubmit()" id="fr">
+        <form action="signupac" onsubmit="return jbSubmit()" id="fr">
             <div class="mb-3 row">
                 <label for="id" class="col-sm-3 col-form-label">ID</label>
                 <div class="col-sm-6">
@@ -96,6 +96,7 @@
         }
         if(regExp.test(email)){
             alert("이메일 형식이 잘못되었습니다.");
+            return false;
         }
         if(password == password2){
             return true;

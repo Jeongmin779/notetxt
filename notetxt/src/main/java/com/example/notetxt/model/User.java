@@ -1,4 +1,4 @@
-package com.example.notetxt.vo;
+package com.example.notetxt.model;
 
 public class User {
 
@@ -10,10 +10,6 @@ public class User {
     private String email;
     private String address;
     private String admin_ck;
-
-    public User() {
-        // TODO Auto-generated constructor stub
-    }
 
     public String getId() {
         return id;
@@ -78,5 +74,4 @@ public class User {
     public void setAdmin_ck(String admin_ck) {
         this.admin_ck = admin_ck;
     }
-
 }

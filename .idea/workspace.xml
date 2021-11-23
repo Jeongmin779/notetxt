@@ -20,7 +20,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/notetxt" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -30,7 +30,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1637629083781</updated>
-      <workItem from="1637629085224" duration="723000" />
+      <workItem from="1637629085224" duration="840000" />
+      <workItem from="1637629969688" duration="10000" />
+      <workItem from="1637630016983" duration="23000" />
     </task>
     <servers />
   </component>
@@ -47,5 +49,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

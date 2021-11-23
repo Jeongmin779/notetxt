@@ -1,20 +1,26 @@
 package com.example.notetxt.service;
 
-import java.util.List;
+import java.util.Map;
 
+import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.notetxt.mapper.PersonMapper;
+import com.example.notetxt.model.User;
 
-@Service
+@Service("loginService")
 public class LoginService {
 
     @Autowired
-    PersonMapper personMapper;
+    private SqlSession session;
 
-    public List selectPersonList(){
-        return personMapper.selectPersonList();
+    public User login(Map<String, String> map) throws Exception {
+        return session.selectOne("mapper.LoginMapper.login", map);
+    }
+
+    public int signup(Map<String, String> map) throws Exception {
+        int result = session.insert("mapper.LoginMapper.signup", map);
+        return result;
     }
 
 }
