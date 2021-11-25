@@ -8,19 +8,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.notetxt.model.User;
-import com.example.notetxt.service.UserService;
+import com.example.notetxt.dao.UserDao;
 
 @Controller
 @RequestMapping("/user")
 public class UserController {
 
     @Autowired
-    private UserService userService;
+    private UserDao userDao;
 
     @GetMapping(value = "/login")
     public String login() {
@@ -34,9 +33,11 @@ public class UserController {
                 model.addAttribute("msg", "아이디 또는 비밀번호를 입력해주세요");
                 return "index";
             }
-            User user = userService.login(map);
+            User user = userDao.login(map);
             if (user != null) {
                 session.setAttribute("user", user);
+                session.setAttribute("userid", user.getId());
+                model.addAttribute("user", session.getAttribute("user"));
             } else {
                 model.addAttribute("msg", "아이디 또는 비밀번호가 올바르지 않습니다.");
                 return "index";
@@ -46,7 +47,6 @@ public class UserController {
             model.addAttribute("msg", "로그인 중 문제가 발생했습니다.");
             return "index";
         }
-        System.out.println(map.size());
         return "index";
     } // end of PostMapping("login")
 }

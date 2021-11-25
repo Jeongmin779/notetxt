@@ -6,11 +6,18 @@
 
     <select id="login" resultType="com.example.notetxt.model.User">
         select
-            name, id
+            *
         from
             user_tbl
         where
             id = #{userid} and password = #{userpwd}
+    </select>
+
+    <select id="all" resultType="com.example.notetxt.model.User">
+        select
+            *
+        from
+            user_tbl
     </select>
 
 </mapper>

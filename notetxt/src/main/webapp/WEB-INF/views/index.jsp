@@ -26,8 +26,9 @@
     </c:if>
     <c:if test="${user != null}">
         <div>
-            <strong>${user.name}</strong>님 환영합니다. <a
+            <strong>${user.nickname}</strong>님 환영합니다. <a
                 href="${root}/user/logout">로그아웃</a>
+            <h5>${test.name}</h5>
         </div>
         <a href="${root}/article/write">글쓰기</a>
         <br>
@@ -37,7 +38,4 @@
     </c:if>
 </div>
 </body>
-<script>
-    console.log('${msg}');
-</script>
 </html>

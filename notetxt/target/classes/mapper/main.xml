@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mapper.MainMapper">
+
+    <select id="loginUser" parameterType="map" resultType="com.example.notetxt.model.User">
+        select
+            *
+        from
+            user_tbl
+        where
+            id = #{id} and password = #{pwd}
+    </select>
+
+    <select id="myVoka" parameterType="map" resultType="com.example.notetxt.model.Voka">
+        SELECT
+            user_tbl.nickname as nickname, voka_tbl.vokaname as vokaname, voka_tbl.description as description, voka_tbl.voka_no as voka_no
+        FROM
+            user_tbl, voka_tbl
+        WHERE
+            voka_tbl.id = user_tbl.id AND user_tbl.id = #{id}
+    </select>
+
+    <select id="popularVoka" parameterType="map" resultType="com.example.notetxt.model.Voka">
+        SELECT
+            user_tbl.nickname as nickname, voka_tbl.vokaname as vokaname, voka_tbl.description as description, voka_tbl.voka_no as voka_no
+        FROM
+            user_tbl, voka_tbl
+        WHERE
+            voka_tbl.id = user_tbl.id AND voka_tbl.share_ck = '1'
+        order by
+            popular desc
+    </select>
+
+</mapper>

@@ -1,14 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" import="java.sql.*"%>
-<%
-    Class.forName("oracle.jdbc.driver.OracleDriver");
-    Connection header_conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "memories", "1234");
-    Statement header_stmt = header_conn.createStatement();
-    ResultSet header_rs = null;
-    System.out.println("select admin_ck from user_tbl where id = '"+ session.getAttribute("id") + "'");
-    header_rs = header_stmt.executeQuery("select admin_ck, nickname from user_tbl where id = '"+ session.getAttribute("id") + "'");
-    header_rs.next();
-%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container-fluid">
         <a class="navbar-brand" href="../user/main-page.jsp">Share Memories</a>
@@ -39,20 +31,21 @@
                     <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="bi bi-person-circle"></i>
                     </a>
-                    <%if(session.getAttribute("id") == null){ %>
+                    <c:if test="${user eq null}">
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarScrollingDropdown" data-bs-popper="none" style="margin-top: 0px;">
                         <li><a class="dropdown-item" href="loginpage">로그인</a></li>
                     </ul>
-                    <%}else{ %>
+                    </c:if>
+                    <c:if test="${user ne null}">
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarScrollingDropdown" data-bs-popper="none" style="margin-top: 0px;">
-                        <li><a class="dropdown-item" href="../user/user-certified.jsp"><%=header_rs.getString("nickname") %>님의 정보</a></li>
-                        <%if(header_rs.getString("admin_ck").equals("1")){ %>
+                        <li><a class="dropdown-item" href="../user/user-certified.jsp">${user.nickname}님의 정보</a></li>
+                        <c:if test="${user.admin_ck eq '1'}">
                         <li><a class="dropdown-item" href="../admin/voka-manage.jsp">어드민페이지</a></li>
-                        <%} %>
+                        </c:if>
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="../action/userlogout.jsp">로그아웃</a></li>
                     </ul>
-                    <%} %>
+                    </c:if>
                 </li>
             </ul>
         </div>

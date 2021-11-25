@@ -1,6 +1,6 @@
 package com.example.notetxt.controller;
 
-import org.apache.ibatis.session.SqlSession;
+import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,14 +12,15 @@ import javax.servlet.http.HttpSession;
 import java.util.Map;
 
 import com.example.notetxt.model.User;
-import com.example.notetxt.service.LoginService;
+import com.example.notetxt.dao.LoginDao;
 
 
 @Controller
 public class LoginController {
 
     @Autowired
-    private LoginService loginService;
+    private LoginDao loginDao;
+
 
 
     @RequestMapping(value = "/loginpage" , method = RequestMethod.GET)
@@ -28,25 +29,28 @@ public class LoginController {
     }
 
     @RequestMapping(value = "/loginpage" , method = RequestMethod.POST)
-    public String login(@RequestParam Map<String, String> map, Model model, HttpSession session) {
+    public String login(@RequestParam Map<String, String> map, Model model, HttpSession session) throws Exception {
+        String s_url = "";
         try {
-            System.out.println(map.get("id"));
-            System.out.println(map.get("pwd"));
-            System.out.println("hi");
-            User loginUser = loginService.login(map);
-            if (loginUser != null){
-                session.setAttribute("user", loginUser);
+            User user = loginDao.login(map);
+            if (user != null) {
+                model.addAttribute("user", user);
+                model.addAttribute("msg", "로그인에 성공하셨습니다.");
+                session.setAttribute("user", user);
+                session.setAttribute("userid", user.getId());
+                s_url = "main";
             } else {
                 model.addAttribute("msg", "아이디 또는 비밀번호가 올바르지 않습니다.");
-                return "/login/loginpage";
+                s_url = "/loginpage";
             }
-        } catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
-            model.addAttribute("msg", "아이디 또는 비밀번호가 올바르지 않습니다.");
-            return "/login/loginpage";
+            model.addAttribute("msg", "로그인 중 문제가 발생했습니다.");
+            s_url = "/loginpage";
         }
-        return "index";
-    }
+        model.addAttribute("url", s_url);
+        return "alertPage";
+    } // end of PostMapping("login")
 
     @RequestMapping(value = "/signup" , method = RequestMethod.GET)
     public String signup() {
@@ -55,7 +59,7 @@ public class LoginController {
 
     @RequestMapping(value = "/signupac" , method = RequestMethod.GET)
     public String signup(@RequestParam Map<String, String> map, Model model, HttpSession session) throws Exception {
-        int result = loginService.signup(map);
+        int result = loginDao.signup(map);
         if(result > 0){
             return "/login/loginpage";
         } else {

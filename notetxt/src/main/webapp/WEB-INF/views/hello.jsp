@@ -21,11 +21,11 @@
 <h2>${name} <span>´Ô ¹İ°©½À´Ï´Ù!</span></h2>
 <hr>
 <table>
-    <c:forEach var="data" items="${result}">
+    <c:forEach var="data" items="${asdf}">
         <tr>
-            <td>${data.id}</td>
-            <td>${data.name }</td>
-            <td>${data.address }</td>
+            <td>${data.id }</td>
+            <td>${data.id }</td>
+            <td>${data.id }</td>
         </tr>
     </c:forEach>
 </table>
