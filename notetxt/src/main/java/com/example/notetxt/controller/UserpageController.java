@@ -20,12 +20,12 @@ public class UserpageController {
     private UserpageDao userpageDao;
 
 
-    @RequestMapping(value = "/main" , method = RequestMethod.GET)
+    @RequestMapping(value = "/index" , method = RequestMethod.GET)
     public String userPage(@RequestParam Map<String, String> map, Model model, HttpSession session) throws Exception {
         map.put("id", (String) session.getAttribute("userid"));
         model.addAttribute("popularVoka", userpageDao.popularVoka(map));
         model.addAttribute("myVoka", userpageDao.myVoka(map));
         model.addAttribute("user", session.getAttribute("user"));
-        return "main";
+        return "/user/main/index";
     }
 }

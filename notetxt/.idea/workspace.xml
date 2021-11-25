@@ -13,8 +13,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JSP File" />
         <option value="Class" />
+        <option value="JSP File" />
       </list>
     </option>
   </component>
@@ -72,6 +72,12 @@
       <recent name="C:\jeongmin\notetxt\notetxt\src\main\resources" />
       <recent name="C:\jeongmin\notetxt\notetxt\src\main" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\jeongmin\notetxt\notetxt\src\main\webapp\WEB-INF\views\good" />
+      <recent name="C:\jeongmin\notetxt\notetxt\src\main\webapp\WEB-INF\views\user\main" />
+      <recent name="C:\jeongmin\notetxt\notetxt\src\main\webapp\WEB-INF\views" />
+      <recent name="C:\jeongmin\notetxt\notetxt\src\main\webapp\WEB-INF\views\user" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="NotetxtApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
@@ -100,7 +106,7 @@
       <workItem from="1637800527628" duration="211000" />
       <workItem from="1637800845515" duration="51000" />
       <workItem from="1637800945231" duration="11862000" />
-      <workItem from="1637818715069" duration="3389000" />
+      <workItem from="1637818715069" duration="6648000" />
     </task>
     <servers />
   </component>

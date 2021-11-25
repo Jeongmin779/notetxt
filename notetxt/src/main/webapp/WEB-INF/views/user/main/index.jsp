@@ -18,7 +18,7 @@
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 </head>
 <body>
-<%@include file="page/user-header.jsp" %>
+<%@include file="../../page/user-header.jsp" %>
 <h3 class="popular_Voka">인기단어장</h3>
 <div #swiperRef="" class="swiper-container mySwiper" style="height:100%; width:80%;">
     <div class="swiper-wrapper">

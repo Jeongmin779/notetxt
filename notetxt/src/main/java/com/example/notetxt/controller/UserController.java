@@ -23,7 +23,7 @@ public class UserController {
 
     @GetMapping(value = "/login")
     public String login() {
-        return "user/login";
+        return "/good/index";
     }
 
     @GetMapping(value = "/test")
@@ -31,7 +31,7 @@ public class UserController {
         try {
             if (map.get("userid") == null || map.get("userpwd") == null) {
                 model.addAttribute("msg", "아이디 또는 비밀번호를 입력해주세요");
-                return "index";
+                return "/good/index";
             }
             User user = userDao.login(map);
             if (user != null) {
@@ -40,13 +40,13 @@ public class UserController {
                 model.addAttribute("user", session.getAttribute("user"));
             } else {
                 model.addAttribute("msg", "아이디 또는 비밀번호가 올바르지 않습니다.");
-                return "index";
+                return "/good/index";
             }
         } catch (Exception e) {
             e.printStackTrace();
             model.addAttribute("msg", "로그인 중 문제가 발생했습니다.");
-            return "index";
+            return "/good/index";
         }
-        return "index";
+        return "/good/index";
     } // end of PostMapping("login")
 }

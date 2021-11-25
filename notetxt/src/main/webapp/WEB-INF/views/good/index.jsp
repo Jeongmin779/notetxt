@@ -22,7 +22,7 @@
     <h3>코로나 방문자 확인서비스</h3>
     <c:if test="${user == null}">
         <h3>${msg}</h3>
-        <%@ include file="/WEB-INF/views/user/login.jsp"%>
+        <%@ include file="/WEB-INF/views/good/login.jsp"%>
     </c:if>
     <c:if test="${user != null}">
         <div>

@@ -24,8 +24,9 @@ public class LoginController {
 
 
     @RequestMapping(value = "/loginpage" , method = RequestMethod.GET)
-    public String loginpage() {
-        return "/login/loginpage";
+    public String loginpage(@RequestParam Map<String, String> map, Model model, HttpSession session) {
+        System.out.println("123");
+        return "/user/login/loginPage";
     }
 
     @RequestMapping(value = "/loginpage" , method = RequestMethod.POST)
@@ -38,15 +39,15 @@ public class LoginController {
                 model.addAttribute("msg", "로그인에 성공하셨습니다.");
                 session.setAttribute("user", user);
                 session.setAttribute("userid", user.getId());
-                s_url = "main";
+                s_url = "index";
             } else {
                 model.addAttribute("msg", "아이디 또는 비밀번호가 올바르지 않습니다.");
-                s_url = "/loginpage";
+                s_url = "loginpage";
             }
         } catch (Exception e) {
             e.printStackTrace();
             model.addAttribute("msg", "로그인 중 문제가 발생했습니다.");
-            s_url = "/loginpage";
+            s_url = "loginpage";
         }
         model.addAttribute("url", s_url);
         return "alertPage";
@@ -61,20 +62,20 @@ public class LoginController {
     public String signup(@RequestParam Map<String, String> map, Model model, HttpSession session) throws Exception {
         int result = loginDao.signup(map);
         if(result > 0){
-            return "/login/loginpage";
+            return "/user/login/loginPage";
         } else {
-            return "/login/signup";
+            return "/user/login/signup";
         }
     }
 
     @RequestMapping(value = "/find_id" , method = RequestMethod.GET)
     public String find_id() {
-        return "/login/find_id";
+        return "/user/login/find_id";
     }
 
     @RequestMapping(value = "/find_pw" , method = RequestMethod.GET)
     public String find_pw() {
-        return "/login/find_pw";
+        return "/user/login/find_pw";
     }
 
 }
