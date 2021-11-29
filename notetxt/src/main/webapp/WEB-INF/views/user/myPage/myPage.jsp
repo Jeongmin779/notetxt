@@ -27,7 +27,7 @@
 
         <div class="form-floating mb-3">
           <input type="text" class="form-control" id="floatingInput" placeholder="1" autofocus="" value="${userInfo.id}" readonly/>
-          <label for="floatingInput">유저 아이디</label>
+          <label for="floatingInput">유저 아이디(변경불가)</label>
         </div>
 
         <div class="form-floating mb-3">

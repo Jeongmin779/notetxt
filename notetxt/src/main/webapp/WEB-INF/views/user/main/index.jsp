@@ -39,7 +39,7 @@
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
     </div>
-    <c:if test="${user != ''}">
+    <c:if test="${not empty user}">
     <h3 class="myVoka">나의단어장</h3>
     <div #swiperRef="" class="swiper-container mySwiper" style="height:100%; width:80%;">
         <div class="swiper-wrapper">
