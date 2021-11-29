@@ -5,9 +5,12 @@
 <mapper namespace="mapper.LoginMapper">
 
     <select id="login" parameterType="map" resultType="com.example.notetxt.model.User">
-        select *
-        from user_tbl
-        where id = #{id} and password = #{pwd}
+        select
+            *
+        from
+            user_tbl
+        where
+            id = #{id} and password = #{pwd}
     </select>
 
     <insert id="signup" parameterType="map">

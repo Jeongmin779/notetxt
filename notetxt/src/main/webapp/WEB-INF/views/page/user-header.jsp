@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container-fluid">
-        <a class="navbar-brand" href="../user/main-page.jsp">Share Memories</a>
+        <a class="navbar-brand" href="/index">Share Memories</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -33,12 +33,12 @@
                     </a>
                     <c:if test="${user eq null}">
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarScrollingDropdown" data-bs-popper="none" style="margin-top: 0px;">
-                        <li><a class="dropdown-item" href="loginpage">로그인</a></li>
+                        <li><a class="dropdown-item" href="/loginpage">로그인</a></li>
                     </ul>
                     </c:if>
                     <c:if test="${user ne null}">
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarScrollingDropdown" data-bs-popper="none" style="margin-top: 0px;">
-                        <li><a class="dropdown-item" href="../user/user-certified.jsp">${user.nickname}님의 정보</a></li>
+                        <li><a class="dropdown-item" href="/user/myPage">${user.nickname}님의 정보</a></li>
                         <c:if test="${user.admin_ck eq '1'}">
                         <li><a class="dropdown-item" href="../admin/voka-manage.jsp">어드민페이지</a></li>
                         </c:if>

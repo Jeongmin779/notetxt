@@ -20,6 +20,14 @@ public class UserpageDao {
         return session.selectOne("mapper.UserMapper.login", map);
     }
 
+    public User userInfo(Map<String, String> map) throws Exception {
+        return session.selectOne("mapper.UserMapper.userInfo", map);
+    }
+
+    public void userInfoUpdate(Map<String, String> map) throws Exception {
+        session.update("mapper.UserMapper.userInfoUpdate", map);
+    }
+
     public List<Voka> popularVoka(Map<String, String> map) throws Exception {
         return session.selectList("mapper.MainMapper.popularVoka", map);
     }
@@ -27,5 +35,6 @@ public class UserpageDao {
     public List<Voka> myVoka(Map<String, String> map) throws Exception {
         return session.selectList("mapper.MainMapper.myVoka", map);
     }
+
 
 }

@@ -4,7 +4,7 @@
 
 <mapper namespace="mapper.UserMapper">
 
-    <select id="login" resultType="com.example.notetxt.model.User">
+    <select id="login" parameterType="map" resultType="com.example.notetxt.model.User">
         select
             *
         from
@@ -13,11 +13,29 @@
             id = #{userid} and password = #{userpwd}
     </select>
 
-    <select id="all" resultType="com.example.notetxt.model.User">
+    <select id="all" parameterType="map" resultType="com.example.notetxt.model.User">
         select
             *
         from
             user_tbl
     </select>
+
+    <select id="userInfo" parameterType="map" resultType="com.example.notetxt.model.User">
+        select
+            id, password, name, NICKNAME, PHONE, EMAIL, ADDRESS
+        from
+            USER_TBL
+        where
+            id = #{userid}
+    </select>
+
+    <update id="userInfoUpdate" parameterType="map">
+        update
+            user_tbl
+        set
+            password = #{password}, name = #{name}, nickname = #{nickname}, phone = #{phone}, email = #{email}, address = #{address}
+        where
+            id = #{userid}
+    </update>
 
 </mapper>
